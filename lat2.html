@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <title>34-Steyr Malfin</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    </head>
+    <body>
+    <div id="app">
+        <h1>{{ sapa('reyy') }}</h1>
+    </div>
+    
+    <script>
+        var app = new Vue({
+            el:"#app",
+            methods: {
+                sapa: function(nama){
+                    return 'Morning ' +nama
+                }
+            }
+        })
+    </script>
+    
+    </body>
+</html>

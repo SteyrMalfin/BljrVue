@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>34-Steyr Malfin</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+	<div id="app">
+        <button v-on:click="pesan">Tampil Pesan 1</button>
+        <br>
+        <button @click="pesan2">Tampil Pesan 2</button>
+	</div>
+
+	<script>
+		var app = new Vue ({
+			el: "#app",
+			methods: {
+                pesan: function(){
+                    alert("Morningggg")
+                },
+                pesan2: function(){
+                    alert("Halooo")
+                }
+            }
+		})
+	</script>
+
+</body>
+</html>

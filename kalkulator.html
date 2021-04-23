@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+            <script type="text/javascript">
+
+        function lanjut(){
+            var a1 = document.getElementById('a1').value;
+            var b1 = parseInt(a1);
+
+            var a2 = document.getElementById('a2').value;
+            var b2 =parseInt(a2);
+
+            var operator = document.getElementById('operator').value;
+            if(operator == "jumlah"){
+                var hasil = b1 + b2;
+            } 
+
+            else if (operator == "kurang"){
+                var hasil = b1 - b2;
+            }
+
+            else if (operator == "bagi"){
+                var hasil = b1 / b2;
+            }
+            else if (operator =="kali"){
+                var hasil = b1 * b2;
+            }
+            var hasil ="hasil : " + hasil ;
+
+            document.getElementById('hasil').innerHTML = hasil;
+        }
+
+        function hapus(){
+            document.getElementById('a1').value = "";
+            document.getElementById('a2').value = "";
+            document.getElementById('operator').value = "";
+            document.getElementById('hasil').innerHTML = "Anda membatalkan proses";
+
+        }
+            </script>  
+
+        <p>Angka1 : <input type="text" id="a1"></p>
+        <p>Angka2 : <input type="text" id="a2"></p>
+        <p>Operator : <select id="operator">
+            <option value="">Pilih</option>
+            <option value="jumlah">Penjumlahan</option>
+            <option value="kurang">Pengurangan</option>
+            <option value="bagi">Pembagian</option>
+            <option value="kali">Perkalian</option>
+            </select></p>
+
+        <p><button id="ok" onclick="lanjut()">OK</button>
+        <button id="cancel" onclick="hapus()">Cancel</button></p>
+        <p id= "hasil"></p>
+
+        </body>
+    </head>
+</html>

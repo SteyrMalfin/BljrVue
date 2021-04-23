@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <title>34-Steyr Malfin</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    </head>
+    <body>
+    <div id="app">
+        <p v-if="stok > 10 ">Stok barang sejumlah {{stok}} </p>
+        <p v-else-if="stok > 0">Barang akan segera habis {{stok}} </p>
+        <p v-else>Barang sudah habis :((( {{stok}}</p>
+    </div>
+    
+    <script>
+        var app = new Vue({
+            el:"#app",
+                data: {
+                    'stok':9
+                }
+        })
+    </script>
+    
+    </body>
+</html>

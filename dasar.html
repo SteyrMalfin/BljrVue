@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+            <script type="text/javascript">
+            document.write("Hello<br>");
+            alert("Wassuup");
+
+            /*var nama;
+            nama = prompt("Masukkan nama");
+            document.write("<br>Nama :" + nama);*/
+
+            //grade
+            
+            /*var nilai;
+            nilai = prompt("Masukkan Nilai");
+            switch (true)
+            {
+                case(nilai >= 91 && nilai<= 100): 
+                    document.write(" Grade A : Lulus");
+                    break;
+
+                case(nilai >= 81 && nilai<= 90):
+                    document.write(" Grade B : Lulus");
+                    break;
+
+                case(nilai >= 71 && nilai<= 80):
+                    document.write(" Grade C : Lulus");
+                    break;
+
+                case(nilai >= 61 && nilai<= 70):
+                    document.write(" Grade D : Lulus");
+                    break;
+
+                case(nilai <=60):
+                    document.write(" Grade E : Gagal");
+                    break;
+
+                default:
+                    document.write("Nilai belum diisi ");
+                    break;      
+            }
+            */
+
+            //form
+            function lanjut(){
+                var nama = document.getElementById('nama').value;
+                    if(nama ==""){
+                        document.getElementById('warning1').innerHTML = "Silahkan Isi Nama Terlebih Dahulu";
+                    }
+                var kelas = document.getElementById('kelas').value;
+                var alamat = document.getElementById('alamat').value;
+                var kota = document.getElementById('kota').value;
+                var kelamin = document.getElementById('kelamin').value;
+                    if (document.getElementById('pria').checked){
+                        kelamin = "pria";
+                    }
+                    else if (document.getElementById('wanita').checked){
+                        gender = "wanita";
+                    }
+                    else{
+                        alert('silahkan isi kelamin terlebih dahulu');
+                    }
+                var hasil ="nama :" +nama + "<br>kelas :" + kelas + "<br>alamat : " +alamat + "<br>kota : " + kota + "<br>kelamin" + kelamin;
+
+                document.getElementById('hasil').innerHTML = hasil;
+            }
+            function hapus(){
+                document.getElementById('nama').value = "";
+                document.getElementById('kelas').value = "";
+                document.getElementById('alamat').value = "";
+                document.getElementById('kota').value = "";
+                document.getElementById('kelamin').value = "";
+                document.getElementById('hasil').innerHTML = "Anda membatalkan proses";
+            }
+            
+
+            /*var pilihan = confirm ("Lanjut atau tidak?");
+            if(pilihan == true){
+                document.write("Proses di lanjutkan");
+            }
+            else {
+                document.write("Proses Berhenti");
+            }*/
+            </script>
+            <p>Nama  : <input type="text" id="nama"></p>
+            <p id ="warning1"></p>
+            <p>Kelas : <select id="kelas">
+                        <option value="">Pilih Kelas Terlebih Dahulu</option>
+                        <option value="XIR1">XIR1</option>
+                        <option value="XIR2">XIR2</option>
+                        <option value="XIR3">XIR3</option>
+                        <option value="XIR4">XIR4</option>
+                        <option value="XIR5">XIR5</option>
+                        <option value="XIR6">XIR6</option>
+                        <option value="XIR7">XIR7</option>
+                        </select></p>
+            <p id ="warning2"></p>
+            <p>Alamat : <input type="text" id="alamat"></p>
+            <p id ="warning3"></p>
+            <p>Kota : <select id="kota">
+                    <option value="">Pilih Kota Terlebih Dahulu</option>
+                    <option value="Malang">Malang</option>
+                    <option value="Surabaya">Surabaya</option>
+                    <option value="Jakarta">Jakarta</option>
+                    </select></p>
+            <p id ="warning4"></p>
+            <p>Kelamin : <input type="radio" id="pria" name="kelamin" value="pria">pria</p>
+            <p>Kelamin : <input type="radio" id="wanita" name="kelamin" value="wanita">wanita</p>
+
+            <p><button id="ok" onclick="lanjut()">OK</button>
+                <button id="cancel" onclick="hapus()">Cancel</button></p>
+
+            <p id= "hasil"></p>
+        </body>
+    </head>
+</html>

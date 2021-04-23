@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+            <h1>Pendaftaran Online</h1>
+            <script type="text/javascript">
+
+            function daftar(){
+                var nama = document.getElementById('nama').value;
+                    if(nama ==""){
+                        alert("Silahkan Isi Nama Terlebih Dahulu !!") ;
+                    }
+                var email = document.getElementById('email').value;
+                    if(email ==""){
+                            alert("Silahkan Isi Email Terlebih Dahulu !!") ;
+                        }
+                var negara = document.getElementById('negara').value;
+                    if(negara ==""){
+                            alert("Silahkan Isi Negara Terlebih Dahulu !!") ;
+                        }
+                var tahun = document.getElementById('tahun').value;
+                    if(tahun ==""){
+                            alert("Silahkan Isi Tahun Kelahiran Terlebih Dahulu !!") ;
+                        }
+
+                        if (document.getElementById('pria').checked) {
+                        var kelamin = "Pria";
+                    }
+                    else if (document.getElementById('wanita').checked) {
+                        var kelamin = "Wanita";
+                    }
+                    else if (document.getElementById('lainnya').checked){
+                        var kelamin = "Lainnya";
+                    }
+                    else {
+                        alert("Silahkan memilih salah satu gender");
+                    }
+
+                var hasil ="nama :" +nama + "<br>email :" + email + "<br>negara : " +negara + "<br>tahun : " + tahun + "<br>kelamin :" + kelamin;
+                document.getElementById('hasil').innerHTML = hasil;
+            }
+
+            function cancel(){
+                document.getElementById('nama').value = "";
+                document.getElementById('email').value = "";
+                document.getElementById('negara').value = "";
+                document.getElementById('tahun').value = "";
+                document.getElementById('pria').checked = false;
+                document.getElementById('wanita').checked = false;
+                document.getElementById('lainnya').checked = false;
+                document.getElementById('hasil').innerHTML = "Anda Membatalkan Proses";
+            }
+
+            </script>
+            <p>Nama   :<input type="text" id="nama"></p>
+            <p>email   :<input type="text" id="email"></p>
+            <p>Negara   :<select name="negara" id="negara">
+                <option value="">Pilih Negara</option>
+                <option value="indonesia">Indonesia</option>
+                <option value="malaysia">Malaysia</option>
+                <option value="singapura">Singapura</option>
+                <option value="brunei">Brunei</option>
+                <option value="india">india</option>
+            </select></p>
+            <p>Tahun   :<select name="tahun" id="tahun">
+                <option value="">Pilih Tahun</option>
+                <option value="2000">2000</option>
+                <option value="2001">2001</option>
+                <option value="2002">2002</option>
+                <option value="2003">2003</option>
+                <option value="2004">2004</option>
+            </select></p>
+            <p>Kelamin  :</p>
+            <input type="radio" id="pria" name="kelamin" value="pria">
+            <label for="pria">Pria</label><br>
+            <input type="radio" id="wanita" name="kelamin" value="wanita">
+            <label for="wanita">Wanita</label><br>
+            <input type="radio" id="lainnya" name="kelamin" value="lainnya">
+            <label for="lainnya">Lainnya</label><br>
+
+            <p><button id="daftar" onclick="daftar()">Daftar</button>
+                <button id="cancel" onclick="cancel()">Cancel</button></p>
+            
+            <p id="hasil"></p>
+
+
+        </body>
+    </head>
+</html>

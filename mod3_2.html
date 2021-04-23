@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>34-Steyr Malfin</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+	<div id="app">
+		<book-detail title="Buku Mengaji" author="Steyr Malfin" year="2021"></book-detail>
+        <book-detail title="Buku Dongeng" author="Steyr Malfin" year="2015"></book-detail>
+        <book-detail title="Cerita Kartun" author="Steyr Malfin" year="2015"></book-detail>
+        <book-detail title="Resep Memasak" author="Steyr Malfin" year="2014"></book-detail>
+        <book-detail title="Tips And Trick" author="Steyr Malfin" year="2020"></book-detail>
+	</div>
+
+    <template id="bookdetail">
+        <div>
+            <h2>Book Detail</h2>
+            <h3>{{title}}</h3>
+            <p>Author: {{author}}</p>
+            <p>Year: {{year}}</p>
+            <hr>
+        </div>
+    </template>
+	<script>
+        Vue.component('book-detail',{
+            template: "#bookdetail",
+            props: ['title','author','year']
+        })
+		var app = new Vue ({
+			el: "#app",
+		})
+	</script>
+
+</body>
+</html>
